@@ -1,0 +1,14 @@
+{
+  "name": "bun_tests",
+  "module": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "hello-world-sdk": "link:hello-world-sdk"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
