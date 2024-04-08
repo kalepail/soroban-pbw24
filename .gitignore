@@ -5,3 +5,5 @@ target
 .soroban
 
 test_snapshots
+
+hello-world-sdk

@@ -4,6 +4,7 @@ await $`rm -rf ./target/wasm32-unknown-unknown/release/`.cwd("../")
 await $`soroban contract build`.cwd("../")
 await $`soroban contract optimize --wasm ./target/wasm32-unknown-unknown/release/hello_world.wasm`.cwd("../")
 
+await $`soroban network add local --rpc-url="http://localhost:8000/soroban/rpc" --network-passphrase="Standalone Network ; February 2017"`
 await $`soroban keys generate pbw24 --network local`
 await $`soroban keys fund pbw24 --network local`
 const contractId = (await $`soroban contract deploy --wasm ../target/wasm32-unknown-unknown/release/hello_world.optimized.wasm --network local --source pbw24`.text()).replace(/\W/g, '')

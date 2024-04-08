@@ -48,7 +48,7 @@ console.log(incrementRes, '\n');
 // Owned Increment
 const sourceKeypair = values.secret && StrKey.isValidEd25519SecretSeed(values.secret) ? Keypair.fromSecret(values.secret) : Keypair.random()
 const sourcePubkey = sourceKeypair.publicKey()
-console.log(sourcePubkey);
+console.log(sourceKeypair.secret());
 
 await fetch(`http://localhost:8000/friendbot?addr=${sourcePubkey}`)
 
